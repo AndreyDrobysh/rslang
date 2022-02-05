@@ -8,7 +8,7 @@
     "dev": "webpack serve --env development",
     "lint": "eslint src"
   },
-  "author": "Anastasiya Zazerskaya",
+  "author": "Andrey Drobysh",
   "devDependencies": {
     "@types/materialize-css": "^1.0.9",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
