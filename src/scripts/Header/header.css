@@ -1,3 +1,9 @@
+.header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+
 .wrap-info-header {
   display: flex;
   justify-content: space-around;

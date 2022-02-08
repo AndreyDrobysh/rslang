@@ -1,3 +1,10 @@
+.footer {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 .wrap-info-footer {
   display: flex;
   align-items: center;
