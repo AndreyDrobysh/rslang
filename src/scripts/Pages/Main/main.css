@@ -1,15 +1,8 @@
-.back-main {
-  z-index: 1;
-  background-color: green;
-  width: 100%;
-  height: 100%;
-}
-
 .menu-wrap {
   z-index: 10;
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
 
   width: 70px;
   height: 100%;
@@ -18,6 +11,8 @@
 
   overflow: hidden;
   transition: .3s;
+
+  border-right: 1px solid rgb(182, 181, 181);
 }
 
 .menu-wrap:hover {
@@ -61,6 +56,60 @@
 }
 
 
+/* Main */
+
+.back-main {
+  z-index: 1;
+  background-color: green;
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+.name-app {
+  position: relative;
+  left: 50%;
+  top: 50%;
+}
+
+/* Game */
+
+.back-game {
+  z-index: 1;
+  background-color: rgb(199, 230, 171);
+  width: 100%;
+  height: calc(100vh - 50px);
+}
 
 
 
+/* Statistics */
+
+.back-statistics {
+  z-index: 1;
+  background-color: rgb(220, 171, 230);
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+
+/* Team */
+
+.back-team {
+  z-index: 1;
+  background-color: rgb(230, 211, 171);
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+
+
+/* Reviews */
+
+.back-reviews {
+  z-index: 1;
+  background-color: rgb(175, 171, 230);
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+ /*  */

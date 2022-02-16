@@ -1,0 +1,218 @@
+.back-textbook {
+  z-index: 1;
+  background-color: rgb(230, 171, 171);
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.section-title-textbook {
+  padding: 100px 0 0 220px;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.menu-book-wrap_btn {
+  padding: 20px 0 0 220px;
+
+  width: 550px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.section-num-book_btn {
+  width: 120px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: #e0e0e0;
+
+  transition: .3s;
+}
+.section-num-book_btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 10px gray;
+}
+
+.folder-section_btn {
+  width: 20px;
+  height: 20px;
+}
+
+/* Page */
+
+.num-page-wrap {
+  height: 30px;
+
+  display: flex;
+}
+
+.past-page-book_btn {
+  width: 35px;
+
+  border: none;
+  border-radius: 5px 0 0 5px;
+
+  background-color: #e0e0e0;
+
+  transition: .3s;
+}
+
+.now-page-book_btn {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  border-right: 1px solid rgb(156, 155, 155);
+  border-top: none;
+  border-left: 1px solid rgb(156, 155, 155);
+  border-bottom: none;
+
+  background-color: #e0e0e0;
+
+  transition: .3s;
+}
+
+.next-page-book_btn {
+  width: 35px;
+
+  border: none;
+  border-radius: 0 5px 5px 0;
+
+  background-color: #e0e0e0;
+
+  transition: .3s;
+}
+
+.past-page-book_btn:hover,
+.now-page-book_btn:hover,
+.next-page-book_btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 10px gray;
+}
+
+.page_img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Game */
+
+.game-in-textbook_btn {
+  width: 85px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: #e0e0e0;
+
+  transition: .3s;
+}
+
+.game-in-textbook_btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 10px gray;
+}
+
+.folder-game-in-book_img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Settings */
+
+.settings-in-textbook_btn {
+  width: 120px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: #e0e0e0;
+
+  transition: .3s;
+}
+
+.settings-in-textbook_btn:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 10px gray;
+}
+
+.settings-in-book_img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Settings Form */
+
+.settings-form-wrap {
+  width: 400px;
+  height: 300px;
+
+  position: fixed;
+  top: calc(50vh - 150px);
+  left: calc(50% - 200px);
+  background-color: white;
+}
+
+.close-form_btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background-color: white;
+
+  transition: .3s;
+}
+
+.close-form_btn:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.close-form_img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Words */
+.word-in-book-wrap {
+  padding: 30px 0 0 220px;
+
+  display: flex;
+}
+
+.word_img {
+  width: 200px;
+  height: 200px;
+}
+
+.info-word-wrap {
+  width: 500px;
+  height: 200px;
+}

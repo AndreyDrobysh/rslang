@@ -12,7 +12,7 @@ export default class App extends BaseComponent {
 
 
   constructor() {
-    super('div');
+    super('div', ['app']);
     this.header = new Header;
     this.footer = new Footer;
     this.main = new Main;
