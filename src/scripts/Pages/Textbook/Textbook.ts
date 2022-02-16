@@ -143,8 +143,6 @@ export default class Textbook extends BaseComponent {
 
     // Words
 
-    
-
     for (let i = 0; i < 10; i++) {
       const wordInBookWrap = new BaseComponent<HTMLDivElement>('div', ['word-in-book-wrap']);
       this.backgroundTextbook.addChild(wordInBookWrap);
