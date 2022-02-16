@@ -9,7 +9,7 @@ export default class Main extends BaseComponent {
   private textbook: Textbook;
 
   container: Container;
-  
+
   menuWrap: BaseComponent<HTMLDivElement>;
 
   mainInfo: BaseComponent<HTMLDivElement>;
@@ -58,7 +58,6 @@ export default class Main extends BaseComponent {
 
   nameApp?: BaseComponent<HTMLParagraphElement>;
 
-
   // Dictionary
 
   backgroundDictionary?: BaseComponent<HTMLDivElement>;
@@ -82,7 +81,7 @@ export default class Main extends BaseComponent {
   constructor() {
     super('main', ['main']);
 
-    this.textbook = new Textbook;
+    this.textbook = new Textbook();
 
     const container = new Container();
     this.addChild(container);
@@ -120,7 +119,7 @@ export default class Main extends BaseComponent {
     listNav.addChild(textbookBtn);
     textbookBtn.onClick(():void => {
       mainInfo.clearChildren();
-      localStorage.setItem('sitePage', 'textbook')
+      localStorage.setItem('sitePage', 'textbook');
       mainInfo.addChild(this.textbook);
     });
     this.textbookBtn = textbookBtn;
@@ -197,15 +196,13 @@ export default class Main extends BaseComponent {
     reviewsBtn.addChild(reviewsTextBtn);
     this.reviewsTextBtn = reviewsTextBtn;
 
-    const sitePageName = localStorage.getItem('sitePage')
-    
+    const sitePageName = localStorage.getItem('sitePage');
+
     if (sitePageName === 'textbook') {
-      mainInfo.addChild(this.textbook)
-    }
-    else {
+      mainInfo.addChild(this.textbook);
+    } else {
       this.main();
     }
-    
   }
 
   main() {
@@ -217,34 +214,31 @@ export default class Main extends BaseComponent {
     backgroundMain.addChild(nameApp);
     this.nameApp = nameApp;
 
-    localStorage.setItem('sitePage', 'main')
+    localStorage.setItem('sitePage', 'main');
   }
 
-  game() {  
+  game() {
     const backgroundGame = new BaseComponent<HTMLDivElement>('div', ['back-game']);
     this.mainInfo.addChild(backgroundGame);
     this.backgroundGame = backgroundGame;
-  };
+  }
 
   statistics() {
     const backgroundStatistics = new BaseComponent<HTMLDivElement>('div', ['back-statistics']);
     this.mainInfo.addChild(backgroundStatistics);
     this.backgroundStatistics = backgroundStatistics;
-  };
+  }
 
   team() {
     const backgroundTeam = new BaseComponent<HTMLDivElement>('div', ['back-team']);
     this.mainInfo.addChild(backgroundTeam);
     this.backgroundTeam = backgroundTeam;
-  };
+  }
 
   reviews() {
     const backgroundReviews = new BaseComponent<HTMLDivElement>('div', ['back-reviews']);
     this.mainInfo.addChild(backgroundReviews);
     this.backgroundReviews = backgroundReviews;
-  };
-
+  }
 }
-
-
 // mongodb+srv://Andrey:Olga7827290@cluster0.hyu1y.mongodb.net/Hello?retryWrites=true&w=majority

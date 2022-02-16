@@ -1,6 +1,6 @@
-import BaseComponent from "../BaseComponent/BaseComponent";
+import BaseComponent from '../BaseComponent/BaseComponent';
 
-export default class ImgComponent extends BaseComponent<HTMLImageElement>{
+export default class ImgComponent extends BaseComponent<HTMLImageElement> {
   constructor(classes:string [] = [], src = '', alt = '', text?: string) {
     super('img', classes);
     if (text) {

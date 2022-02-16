@@ -49,7 +49,7 @@ export default class Textbook extends BaseComponent {
   closeFormBtn?: ButtonComponent;
 
   closeFormImg?: ImgComponent;
-  
+
   // Word
   wordInBookWrap?: BaseComponent<HTMLDivElement>;
 
@@ -128,9 +128,9 @@ export default class Textbook extends BaseComponent {
     menuBookBtnWrap.addChild(settingsBtnInTextbook);
     settingsBtnInTextbook.onClick(():void => {
       console.log(21);
-      
+
       this.settingsMenu();
-    })
+    });
     this.settingsBtnInTextbook = settingsBtnInTextbook;
 
     const settingsInBtnGameImg = new ImgComponent(['settings-in-book_img'], 'settings.svg');
@@ -153,12 +153,9 @@ export default class Textbook extends BaseComponent {
       this.wordImg = wordImg;
 
       const infoWordWrap = new BaseComponent<HTMLDivElement>('div', ['info-word-wrap'], 'Что-то');
-      wordInBookWrap.addChild(infoWordWrap);  
+      wordInBookWrap.addChild(infoWordWrap);
       this.infoWordWrap = infoWordWrap;
     }
-
-    
-
   }
 
   settingsMenu() {
@@ -178,9 +175,7 @@ export default class Textbook extends BaseComponent {
     const closeFormImg = new ImgComponent(['close-form_img'], 'cross.svg');
     closeFormBtn.addChild(closeFormImg);
     this.closeFormImg = closeFormImg;
-    
+
     // First point
-
-  };
-
+  }
 }

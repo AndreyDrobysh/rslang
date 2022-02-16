@@ -10,12 +10,11 @@ export default class App extends BaseComponent {
 
   private main: Main;
 
-
   constructor() {
     super('div', ['app']);
-    this.header = new Header;
-    this.footer = new Footer;
-    this.main = new Main;
+    this.header = new Header();
+    this.footer = new Footer();
+    this.main = new Main();
   }
 
   start(): void {
