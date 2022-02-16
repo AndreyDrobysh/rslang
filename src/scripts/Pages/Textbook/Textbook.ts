@@ -77,7 +77,7 @@ export default class Textbook extends BaseComponent {
     menuBookBtnWrap.addChild(sectionNumBookBtn);
     this.sectionNumBookBtn = sectionNumBookBtn;
 
-    const folderInBtnSectionImg = new ImgComponent(['folder-section_btn'], 'folder.svg');
+    const folderInBtnSectionImg = new ImgComponent(['folder-section_btn'], 'folder.svg', 'folder');
     sectionNumBookBtn.addChild(folderInBtnSectionImg);
     this.folderInBtnSectionImg = folderInBtnSectionImg;
 
@@ -98,7 +98,7 @@ export default class Textbook extends BaseComponent {
     numPageBookWrap.addChild(nowPageBookBtn);
     this.nowPageBookBtn = nowPageBookBtn;
 
-    const pageImg = new ImgComponent(['page_img'], 'page.svg');
+    const pageImg = new ImgComponent(['page_img'], 'page.svg', 'page');
     nowPageBookBtn.addChild(pageImg);
     this.pageImg = pageImg;
 
@@ -115,7 +115,7 @@ export default class Textbook extends BaseComponent {
     menuBookBtnWrap.addChild(gameBtnInTextbook);
     this.gameBtnInTextbook = gameBtnInTextbook;
 
-    const gamepadInBtnGameImg = new ImgComponent(['folder-game-in-book_img'], 'gamepad.svg');
+    const gamepadInBtnGameImg = new ImgComponent(['folder-game-in-book_img'], 'listNav/gamepad.svg', 'game');
     gameBtnInTextbook.addChild(gamepadInBtnGameImg);
     this.gamepadInBtnGameImg = gamepadInBtnGameImg;
 
@@ -133,7 +133,7 @@ export default class Textbook extends BaseComponent {
     });
     this.settingsBtnInTextbook = settingsBtnInTextbook;
 
-    const settingsInBtnGameImg = new ImgComponent(['settings-in-book_img'], 'settings.svg');
+    const settingsInBtnGameImg = new ImgComponent(['settings-in-book_img'], 'settings.svg', 'settings');
     settingsBtnInTextbook.addChild(settingsInBtnGameImg);
     this.settingsInBtnGameImg = settingsInBtnGameImg;
 
@@ -143,12 +143,12 @@ export default class Textbook extends BaseComponent {
 
     // Words
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       const wordInBookWrap = new BaseComponent<HTMLDivElement>('div', ['word-in-book-wrap']);
       this.backgroundTextbook.addChild(wordInBookWrap);
       this.wordInBookWrap = wordInBookWrap;
 
-      const wordImg = new ImgComponent(['word_img'], 'book.svg');
+      const wordImg = new ImgComponent(['word_img'], 'listNav/book.svg', 'picture');
       wordInBookWrap.addChild(wordImg);
       this.wordImg = wordImg;
 
@@ -172,7 +172,7 @@ export default class Textbook extends BaseComponent {
     settingFormWrap.addChild(closeFormBtn);
     this.closeFormBtn = closeFormBtn;
 
-    const closeFormImg = new ImgComponent(['close-form_img'], 'cross.svg');
+    const closeFormImg = new ImgComponent(['close-form_img'], 'cross.svg', 'cross');
     closeFormBtn.addChild(closeFormImg);
     this.closeFormImg = closeFormImg;
 

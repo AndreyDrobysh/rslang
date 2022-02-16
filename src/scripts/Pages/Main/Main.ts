@@ -5,6 +5,34 @@ import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 import ImgComponent from '../../components/ImgComponent/ImgComponent';
 import Textbook from '../Textbook/Textbook';
 
+const INFO_ABOUT_APP = [
+  {
+    adressImg: 'aboutApp/gamepad-app.svg',
+    namePoit: 'Игры',
+    textPoit: 'Разные игры помогают учить без скуки с результатом',
+  },
+  {
+    adressImg: 'listNav/statistics.svg',
+    namePoit: 'Статистика',
+    textPoit: 'Правильно оценивай свой уровень знаний по статистике',
+  },
+  {
+    adressImg: 'aboutApp/knowledge.svg',
+    namePoit: 'Знания',
+    textPoit: 'Отмечай выученное, получай только новые знания',
+  },
+  {
+    adressImg: 'settings.svg',
+    namePoit: 'Настройки',
+    textPoit: 'Сложность меняется в зависимости от установок',
+  },
+  {
+    adressImg: 'aboutApp/repeat.svg',
+    namePoit: 'Повтор',
+    textPoit: 'Уникальная система интервального повторения',
+  },
+];
+
 export default class Main extends BaseComponent {
   private textbook: Textbook;
 
@@ -58,6 +86,38 @@ export default class Main extends BaseComponent {
 
   nameApp?: BaseComponent<HTMLParagraphElement>;
 
+  aboutAppMain?: BaseComponent<HTMLParagraphElement>;
+
+  mainBtnWrap?: BaseComponent<HTMLDivElement>;
+
+  registrationBtn?: ButtonComponent;
+
+  aboutAppBtn?: ButtonComponent;
+
+  // About App
+
+  aboutAppBack?: BaseComponent<HTMLDivElement>;
+
+  aboutAppWrap?: BaseComponent<HTMLDivElement>;
+
+
+  aboutAppTextForm?: BaseComponent<HTMLParagraphElement>;
+
+  allPointAppWrap?: BaseComponent<HTMLDivElement>;
+
+  pointAppWrap?: BaseComponent<HTMLDivElement>;
+
+  pointAppImg?: ImgComponent;
+
+  nameAppText?: BaseComponent<HTMLParagraphElement>;
+
+  discAppText?: BaseComponent<HTMLParagraphElement>;
+
+  headerAppTextForm?: BaseComponent<HTMLParagraphElement>;
+
+  teamBtnInForm?: ButtonComponent;
+
+
   // Dictionary
 
   backgroundDictionary?: BaseComponent<HTMLDivElement>;
@@ -107,7 +167,7 @@ export default class Main extends BaseComponent {
     });
     this.mainBtn = mainBtn;
 
-    const mainImg = new ImgComponent(['menu_img'], 'main.svg');
+    const mainImg = new ImgComponent(['menu_img'], 'listNav/main.svg', 'main');
     mainBtn.addChild(mainImg);
     this.mainImg = mainImg;
 
@@ -124,7 +184,7 @@ export default class Main extends BaseComponent {
     });
     this.textbookBtn = textbookBtn;
 
-    const textbookImg = new ImgComponent(['menu_img'], 'book.svg');
+    const textbookImg = new ImgComponent(['menu_img'], 'listNav/book.svg', 'book');
     textbookBtn.addChild(textbookImg);
     this.textbookImg = textbookImg;
 
@@ -140,7 +200,7 @@ export default class Main extends BaseComponent {
     });
     this.miniGameBtn = miniGameBtn;
 
-    const miniGameImg = new ImgComponent(['menu_img'], 'gamepad.svg');
+    const miniGameImg = new ImgComponent(['menu_img'], 'listNav/gamepad.svg', 'game');
     miniGameBtn.addChild(miniGameImg);
     this.miniGameImg = miniGameImg;
 
@@ -156,7 +216,7 @@ export default class Main extends BaseComponent {
     });
     this.statisticsBtn = statisticsBtn;
 
-    const statisticsImg = new ImgComponent(['menu_img'], 'statistics.svg');
+    const statisticsImg = new ImgComponent(['menu_img'], 'listNav/statistics.svg', 'stat');
     statisticsBtn.addChild(statisticsImg);
     this.statisticsImg = statisticsImg;
 
@@ -172,7 +232,7 @@ export default class Main extends BaseComponent {
     });
     this.teamBtn = teamBtn;
 
-    const teamImg = new ImgComponent(['menu_img'], 'team.svg');
+    const teamImg = new ImgComponent(['menu_img'], 'listNav/team.svg', 'team');
     teamBtn.addChild(teamImg);
     this.teamImg = teamImg;
 
@@ -188,7 +248,7 @@ export default class Main extends BaseComponent {
     });
     this.reviewsBtn = reviewsBtn;
 
-    const reviewsImg = new ImgComponent(['menu_img'], 'reviews.svg');
+    const reviewsImg = new ImgComponent(['menu_img'], 'listNav/reviews.svg', 'reviews');
     reviewsBtn.addChild(reviewsImg);
     this.reviewsImg = reviewsImg;
 
@@ -214,7 +274,76 @@ export default class Main extends BaseComponent {
     backgroundMain.addChild(nameApp);
     this.nameApp = nameApp;
 
+    const aboutAppMain = new BaseComponent<HTMLParagraphElement>('p', ['about-app-main'], 'Быстрый и удобный способ выучить английский');
+    backgroundMain.addChild(aboutAppMain);
+    this.aboutAppMain = aboutAppMain;
+
+    const mainBtnWrap = new BaseComponent<HTMLDivElement>('div', ['main-wrap-btn']);
+    backgroundMain.addChild(mainBtnWrap);
+    this.mainBtnWrap = mainBtnWrap;
+
+    const registrationBtn = new ButtonComponent(['registration_btn'], 'Регистрация');
+    mainBtnWrap.addChild(registrationBtn);
+    this.registrationBtn = registrationBtn;
+
+    const aboutAppBtn = new ButtonComponent(['about-app_btn'], 'О приложении');
+    mainBtnWrap.addChild(aboutAppBtn);
+    aboutAppBtn.onClick(():void => {
+      this.aboutApp()
+    })
+    this.aboutAppBtn = aboutAppBtn;
+
     localStorage.setItem('sitePage', 'main');
+  }
+
+  aboutApp() {
+    const aboutAppBack = new BaseComponent<HTMLDivElement>('div', ['back-about-app']);
+    this.mainInfo.addChild(aboutAppBack);
+    this.aboutAppBack = aboutAppBack;
+
+    const aboutAppWrap = new BaseComponent<HTMLDivElement>('div', ['about-app-wrap']);
+    aboutAppBack.addChild(aboutAppWrap);
+    this.aboutAppWrap = aboutAppWrap;
+
+    const headerAppTextForm = new BaseComponent<HTMLParagraphElement>('p', ['header-app-text-form'], 'Как всё устроено');
+    aboutAppWrap.addChild(headerAppTextForm);
+    this.headerAppTextForm = headerAppTextForm;
+
+    const aboutAppTextForm = new BaseComponent<HTMLParagraphElement>('p', ['about-app-text-form'], 'Приложение для изучения иностранных слов с техникой интервального повторения, отслеживания индивидуального прогресса и мини-игр.');
+    aboutAppWrap.addChild(aboutAppTextForm);
+    this.aboutAppTextForm = aboutAppTextForm;
+
+    const allPointAppWrap = new BaseComponent<HTMLDivElement>('div', ['all-point-app-wrap']);
+    aboutAppWrap.addChild(allPointAppWrap);
+    this.allPointAppWrap = allPointAppWrap;
+
+    for (let i = 0; i < 5; i++) {
+      const pointAppWrap = new BaseComponent<HTMLDivElement>('div', ['point-app-wrap']);
+      allPointAppWrap.addChild(pointAppWrap);
+      this.pointAppWrap = pointAppWrap;
+
+      const pointAppImg = new ImgComponent(['point-app_img'], `${INFO_ABOUT_APP[i].adressImg}`, 'main');
+      pointAppWrap.addChild(pointAppImg);
+      this.pointAppImg = pointAppImg;
+
+      const nameAppText = new BaseComponent<HTMLParagraphElement>('p', ['name-app-text'], `${INFO_ABOUT_APP[i].namePoit}`);
+      pointAppWrap.addChild(nameAppText);
+      this.nameAppText = nameAppText;
+
+      const discAppText = new BaseComponent<HTMLParagraphElement>('p', ['disc-app-text'], `${INFO_ABOUT_APP[i].textPoit}`);
+      pointAppWrap.addChild(discAppText);
+      this.discAppText = discAppText;
+    }
+
+    const teamBtnInForm = new ButtonComponent(['team-in-form_btn'], 'Разработчики');
+    aboutAppWrap.addChild(teamBtnInForm);
+    teamBtnInForm.onClick(():void => {
+      this.mainInfo.clearChildren();
+      this.reviews();
+    });
+    this.teamBtnInForm = teamBtnInForm;
+    
+
   }
 
   game() {
