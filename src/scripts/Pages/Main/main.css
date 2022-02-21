@@ -205,17 +205,33 @@
   box-shadow: 0px 2px 5px gray;
 }
 
+.cross-in-form-wrap {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 21px;
+  height: 21px;
 
-/* Game */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.back-game {
-  z-index: 1;
-  background-color: rgb(199, 230, 171);
-  width: 100%;
-  height: calc(100vh - 50px);
+  border: none;
+
+  background-color: white;
+
+  transition: .3s;
 }
 
+.cross-in-form_img {
+  width: 20px;
+  height: 20px;
+}
 
+.cross-in-form-wrap:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
 
 /* Statistics */
 
@@ -225,18 +241,6 @@
   width: 100%;
   height: calc(100vh - 50px);
 }
-
-
-/* Team */
-
-.back-team {
-  z-index: 1;
-  background-color: rgb(230, 211, 171);
-  width: 100%;
-  height: calc(100vh - 50px);
-}
-
-
 
 /* Reviews */
 

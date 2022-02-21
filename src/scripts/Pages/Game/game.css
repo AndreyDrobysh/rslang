@@ -1,0 +1,47 @@
+.back-game {
+  z-index: 1;
+  background: linear-gradient(to bottom right, black,blue, purple 66%, pink);
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+.game-wrap {
+  position: relative;
+  top: calc(50% - 100px);
+  left: calc(50% - 500px);
+
+  width: 1000px;
+  height: 200px;
+
+
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.game-audio_btn,
+.game-sprint-Btn {
+  width: 400px;
+  height: 220px;
+
+  background-color: transparent;
+
+  border: 5px solid white;
+  border-radius: 50px;
+
+  font-size: 40px;
+  text-transform: uppercase;
+  color: white;
+
+  transition: .3s;
+}
+
+
+.game-audio_btn:hover,
+.game-sprint-Btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px white;
+}

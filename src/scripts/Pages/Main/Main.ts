@@ -4,6 +4,8 @@ import Container from '../../container/Container';
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 import ImgComponent from '../../components/ImgComponent/ImgComponent';
 import Textbook from '../Textbook/Textbook';
+import Game from '../Game/Game';
+import Team from '../Team/Team';
 
 const INFO_ABOUT_APP = [
   {
@@ -35,6 +37,10 @@ const INFO_ABOUT_APP = [
 
 export default class Main extends BaseComponent {
   private textbook: Textbook;
+
+  private game: Game;
+
+  private team: Team;
 
   container: Container;
 
@@ -100,7 +106,6 @@ export default class Main extends BaseComponent {
 
   aboutAppWrap?: BaseComponent<HTMLDivElement>;
 
-
   aboutAppTextForm?: BaseComponent<HTMLParagraphElement>;
 
   allPointAppWrap?: BaseComponent<HTMLDivElement>;
@@ -117,14 +122,9 @@ export default class Main extends BaseComponent {
 
   teamBtnInForm?: ButtonComponent;
 
+  crossInFormWrap?: ButtonComponent;
 
-  // Dictionary
-
-  backgroundDictionary?: BaseComponent<HTMLDivElement>;
-
-  // Game
-
-  backgroundGame?: BaseComponent<HTMLDivElement>;
+  crossInFormBtn?: ImgComponent;
 
   // Statistics
 
@@ -142,6 +142,8 @@ export default class Main extends BaseComponent {
     super('main', ['main']);
 
     this.textbook = new Textbook();
+    this.game = new Game();
+    this.team = new Team();
 
     const container = new Container();
     this.addChild(container);
@@ -196,7 +198,8 @@ export default class Main extends BaseComponent {
     listNav.addChild(miniGameBtn);
     miniGameBtn.onClick(():void => {
       mainInfo.clearChildren();
-      this.game();
+      localStorage.setItem('sitePage', 'game');
+      mainInfo.addChild(this.game);
     });
     this.miniGameBtn = miniGameBtn;
 
@@ -228,7 +231,8 @@ export default class Main extends BaseComponent {
     listNav.addChild(teamBtn);
     teamBtn.onClick(():void => {
       mainInfo.clearChildren();
-      this.team();
+      localStorage.setItem('sitePage', 'team');
+      mainInfo.addChild(this.team);
     });
     this.teamBtn = teamBtn;
 
@@ -260,6 +264,10 @@ export default class Main extends BaseComponent {
 
     if (sitePageName === 'textbook') {
       mainInfo.addChild(this.textbook);
+    } else if (sitePageName === 'game') {
+      mainInfo.addChild(this.game);
+    } else if (sitePageName === 'team') {
+      mainInfo.addChild(this.team);
     } else {
       this.main();
     }
@@ -289,8 +297,8 @@ export default class Main extends BaseComponent {
     const aboutAppBtn = new ButtonComponent(['about-app_btn'], 'О приложении');
     mainBtnWrap.addChild(aboutAppBtn);
     aboutAppBtn.onClick(():void => {
-      this.aboutApp()
-    })
+      this.aboutApp();
+    });
     this.aboutAppBtn = aboutAppBtn;
 
     localStorage.setItem('sitePage', 'main');
@@ -342,26 +350,24 @@ export default class Main extends BaseComponent {
       this.reviews();
     });
     this.teamBtnInForm = teamBtnInForm;
-    
 
-  }
+    const crossInFormWrap = new ButtonComponent(['cross-in-form-wrap']);
+    aboutAppWrap.addChild(crossInFormWrap);
+    crossInFormWrap.onClick(():void => {
+      this.mainInfo.clearChildren();
+      this.main();
+    });
+    this.crossInFormWrap = crossInFormWrap;
 
-  game() {
-    const backgroundGame = new BaseComponent<HTMLDivElement>('div', ['back-game']);
-    this.mainInfo.addChild(backgroundGame);
-    this.backgroundGame = backgroundGame;
+    const crossInFormBtn = new ImgComponent(['cross-in-form_img'], 'cross.svg', 'cross');
+    crossInFormWrap.addChild(crossInFormBtn);
+    this.crossInFormBtn = crossInFormBtn;
   }
 
   statistics() {
     const backgroundStatistics = new BaseComponent<HTMLDivElement>('div', ['back-statistics']);
     this.mainInfo.addChild(backgroundStatistics);
     this.backgroundStatistics = backgroundStatistics;
-  }
-
-  team() {
-    const backgroundTeam = new BaseComponent<HTMLDivElement>('div', ['back-team']);
-    this.mainInfo.addChild(backgroundTeam);
-    this.backgroundTeam = backgroundTeam;
   }
 
   reviews() {
