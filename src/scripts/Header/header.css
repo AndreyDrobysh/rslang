@@ -1,0 +1,24 @@
+.header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+
+.wrap-info-header {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 50px;
+
+  background-color: #fafafa;
+
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+.authorization_btn {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+}

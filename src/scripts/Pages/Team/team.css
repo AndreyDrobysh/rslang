@@ -1,0 +1,37 @@
+.team-back {
+  z-index: 1;
+  background: linear-gradient(to bottom, black,blue 48%, purple 96%);
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+.all-info {
+  padding: 130px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.name-page {
+  font-size: 30px;
+  color: white;
+}
+
+.profile-wrap {
+  margin-top: 40px;
+  width: 1000px;
+  height: 250px;
+
+  background-color: #fafafa;
+
+  display: flex;
+}
+
+.my-face {
+  height: 250px;
+}
+
+.github-link {
+  color: #3f51b5;
+  text-decoration: none;
+}
